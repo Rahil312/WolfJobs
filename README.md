@@ -31,16 +31,11 @@
 
 # What's New:
 
- - **New Screens Added!**
- - Branding, Colours and Typography
- - Components & States
- - Mutliple UI Screens _flows_ for Student & Manager Roles
- - [https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs)
-
- - Seamless Resume Upload and Parsing: We've made it a breeze for applicants to submit their resumes for each job posting, while employers can effortlessly access and view the stored PDFs in MongoDB.
- - Precision Application Matching: Say goodbye to the uncertainty of job applications! With our enhanced system, applicants now have the power to identify which jobs align perfectly with their skills and qualifications. WolfJobs will analyze your profile and inform you if you're a strong fit for a position.
- - Revamped Job Sorting and Search:  Our revamped job sorting and search features allows you to easily organize opportunities by pay, city, and employment type. Plus, you can perform specific job searches to find the perfect match.
-- Stay Informed with the Notifications Tab: Introduced our brand-new Notifications tab to WolfJobs. Now, you can receive timely updates on the status of your applications, ensuring you're always in the know about your job prospects. 
+1. Expanded Job Opportunities – WolfJobs now includes off-campus job listings. Connect with industry recruiters to find internships and full-time positions that align with your career aspirations and broaden your options beyond campus.
+2. Cover Letter Generation – WolfJobs also offers automatic cover letter outlines based on your resume and job descriptions, helping you build personalized applications faster.
+3. Percentage-Based Profile Matching – With percentage-based skill and qualification matching, wolfJobs helps the recruiters to assess your compatibility with job requirements with ease.
+4. Enhanced Security with Two-Factor Authentication – Our new two-factor authentication feature adds an extra layer of protection, requiring identity verification through a unique code sent to your email.
+5. Email Notifications for Job Postings - Now, we offer real-time email updates about new job openings which keep you informed about the latest openings with minimal effort. 
 
 
 # Presentation Video
@@ -49,9 +44,7 @@
 
 # About Us
 
-Eager to dive into a side hustle or seize a full-time job opportunity? Look no further than WolfJobs. Our platform is the ultimate connector between recruiters in need of talent for both short-term and full-time roles and candidates seeking the freedom to choose. Dive in, earn your share, and opt out whenever you want – or stay on for a longer journey!
-
-At the heart of our bustling campus, WolfJobs stands out as the top student employment portal. Whether you're on the hunt for a short-term tech project, a part-time shift at a campus dining hall, or a full-time position that offers stability and growth, WolfJobs has a spot just for you.
+Ready to jump into a side hustle or land your dream full-time job? Look no further than WolfJobs! We’re the ultimate platform connecting recruiters to top talent for both short-term gigs and full-time careers, giving candidates the freedom to choose the perfect opportunity. Whether you're a student or a recruiter, WolfJobs makes the entire process seamless. At the heart of campus life, WolfJobs is the go-to portal for student employment. With its sleek, user-friendly design, Get Placed turns the hassle of job searching, applying, and tracking into an effortless journey—so you can focus on building your career, not sifting through paperwork. For recruiters, it’s time to ditch the spreadsheets and endless documents. WolfJobs' powerful skill-matching features help you quickly find, analyze, and manage the best candidates, making hiring smarter and easier than ever. WolfJobs, the perfect match is just a click away!".                                           
 
 # Why WolfJobs?
 
@@ -64,16 +57,6 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 - **A Confluence of Values:** Our foundation rests on unwavering values: integrity, respect for diversity, responsibility, stewardship, and relentless pursuit of excellence. Every job posted resonates with these ideals, ensuring a harmonious and enriching work environment.
 
 - **Inclusivity & Belonging:** At WolfJobs, every student is a valuable asset. Our emphasis on inclusion ensures that you're not just taking up a job; you're becoming a part of a diverse, dynamic community where your voice matters.
-
-# Detailed Description of New Functionalities: -
-##  OTP Authentication Functionality:
-In order to trigger a two-factor authentication, we are sending a One Time Password to the user to further authenticate our user thus ultimately increasing the security of the application. Now, we execute this task by making a Mangoose Schema that stores a newly created 6-digit code in the database linked with the user email address, such that the code has the life cycle of 300 seconds, helping increase the security. This OTP is sent out the registered email address at the time of login, along with email text conveying the code and validity to the recipient email address using the mailsender method of the nodemailer library. This schema is ultimately exported to our database MongoDB in the form of OTP named Model.
-## OTP Generator 
-This method is responsible for generating real time unique 6-digit One Time Passwords, these OTP are then linked with the recipient email address and saved into the database. We have made this functionality such that OTP generated is valid only for 5 minutes and later the new OTP is required for authentication.
-## Verify OTP 
-This method is based on RESTful API such that, it expects a POST request containing email and OTP. This OTP if validated returns a 200 status “success” – indicating correct execution of the code and retrieves the corresponding user document from the database. If the OTP life of 5 minutes is exceeded or the OTP entered is incorrect then, it returns 400 status - an error indicating unsuccessful login attempt.
-## Mailsender Functionality  
-We have used mailsender function from the standard nodemailer library for sending out emails to all the applicants whenever a new company is opening for jobs. This function mailsender, is based on Simple Protocol Mail Transfer(SMTP) that uses parameters email addresses of recipients, the content HTML and the title of the email. One uniform sender noreplywolfjobs@gmail.com, sends out email to all applicants ( rchampa2@ncsu.edu, rshukla7@ncsu.edu, kpatel49@ncsu.edu, etc.) and in case this task fails, error is logged.
 
 # Application Preview:
 
@@ -163,21 +146,13 @@ Your app is ready to be deployed!
 
 # Future Improvements✨
 
-**1. Email Service📧** - On getting selected/rejected to a job, the applicant should be getting an email about it.
+**1. Auto-fill Functionality** -  A new auto-fill feature will streamline applications by pre-populating frequently used details, making the application process faster and more efficient.
 
-**2. Interview Video Submission** - Managers can request applicants to submit a video screening file and applicants can upload a video on their side of the portal.
+**2. Enhanced UI for the Web App** - We can  improve WolfJobs' interface to deliver a more intuitive and visually appealing experience, making job searches and candidate management smoother.
 
-**3. Job Analysis🔍** – WolfJobs will provide the functionality of analysing various aspects of a job. Job Analysis based on various parameters using graphical representation will help in making prediction on which jobs are more preferred and for which jobs applicants have more inclination. Hiring managers can then decide what rewards and salary to be given to the applicants of that job. Even applicants will get to know, which job is being preferred among other applicants.
+**3. Automated Session Invites for Recruiters** - Functionality to help recruiters  directly send session or event links regarding the company directly to applicants via email, allowing for streamlined communication and better engagement with candidates.
 
-**4. Chatbot Integration🤖** – Our platform WolfJobs will also provide the functionality of Chatbot integrated with our website so that user can easily interact with the bot and get to know about various features of our web application and have a nice interactive experience.
-
-**5. Interview Appointment Scheduling📆** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using google calendar appointments can be organised.
-
-**6. Candidate Matching Percentage** – WolfJobs applicant skill matching feature will include a percentage to how fit a candidate's skills are based on the job's required skills. Applicants will see a match percentage indicating how likely they are to get accepted and recieve an interview. 
-
-**7. Matching based on Resume** – WolfJobs applicants will be able to parse their resume and WolfJobs will extract key skills from the resume and compare it with required job skills to give candidates job matching status.
-
-**8. Database Security and Hashing** – WolfJobs currently does not securely store the password and user information in the database. This data needs to be protected and hashed to ensure security.
+**4. Fix Bugs : Multiple User Login** - Resolve the issue of limiting logins to one user at a time, enabling multiple users to log in simultaneously for improved collaboration and usability.
 
 
 # Contributors
