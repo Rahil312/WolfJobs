@@ -66,3 +66,8 @@ The process described here has several goals:
 - Fix problems that are important to users
 - Engage the community in working toward the best possible WolfJobs
 - Enable a sustainable system for Atom's maintainers to review contributions
+# Contact Us:
+In case there is some persistent bug; please feel free to contact group - 63
+- Rohan Mehul Champaneri - rchampa2@ncsu.edu
+- Rahil Hardik Shukla - rshukla7@ncsu.edu
+- Karan Shaunak Patel - kpatel49@ncsu.edu
