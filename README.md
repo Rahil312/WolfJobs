@@ -65,6 +65,16 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 - **Inclusivity & Belonging:** At WolfJobs, every student is a valuable asset. Our emphasis on inclusion ensures that you're not just taking up a job; you're becoming a part of a diverse, dynamic community where your voice matters.
 
+# Detailed Description of New Functionalities: -
+##  OTP Authentication Functionality:
+In order to trigger a two-factor authentication, we are sending a One Time Password to the user to further authenticate our user thus ultimately increasing the security of the application. Now, we execute this task by making a Mangoose Schema that stores a newly created 6-digit code in the database linked with the user email address, such that the code has the life cycle of 300 seconds, helping increase the security. This OTP is sent out the registered email address at the time of login, along with email text conveying the code and validity to the recipient email address using the mailsender method of the nodemailer library. This schema is ultimately exported to our database MongoDB in the form of OTP named Model.
+## OTP Generator 
+This method is responsible for generating real time unique 6-digit One Time Passwords, these OTP are then linked with the recipient email address and saved into the database. We have made this functionality such that OTP generated is valid only for 5 minutes and later the new OTP is required for authentication.
+## Verify OTP 
+This method is based on RESTful API such that, it expects a POST request containing email and OTP. This OTP if validated returns a 200 status “success” – indicating correct execution of the code and retrieves the corresponding user document from the database. If the OTP life of 5 minutes is exceeded or the OTP entered is incorrect then, it returns 400 status - an error indicating unsuccessful login attempt.
+## Mailsender Functionality  
+We have used mailsender function from the standard nodemailer library for sending out emails to all the applicants whenever a new company is opening for jobs. This function mailsender, is based on Simple Protocol Mail Transfer(SMTP) that uses parameters email addresses of recipients, the content HTML and the title of the email. One uniform sender noreplywolfjobs@gmail.com, sends out email to all applicants ( rchampa2@ncsu.edu, rshukla7@ncsu.edu, kpatel49@ncsu.edu, etc.) and in case this task fails, error is logged.
+
 # Application Preview:
 
 ## Applicant Side
