@@ -31,11 +31,11 @@
 
 # What's New:
 
-1. Expanded Job Opportunities – WolfJobs now includes off-campus job listings. Connect with industry recruiters to find internships and full-time positions that align with your career aspirations and broaden your options beyond campus.
-2. Cover Letter Generation – WolfJobs also offers automatic cover letter outlines based on your resume and job descriptions, helping you build personalized applications faster.
-3. Percentage-Based Profile Matching – With percentage-based skill and qualification matching, wolfJobs helps the recruiters to assess your compatibility with job requirements with ease.
-4. Enhanced Security with Two-Factor Authentication – Our new two-factor authentication feature adds an extra layer of protection, requiring identity verification through a unique code sent to your email.
-5. Email Notifications for Job Postings - Now, we offer real-time email updates about new job openings which keep you informed about the latest openings with minimal effort. 
+**1. Expanded Job Opportunities** – WolfJobs now includes off-campus job listings. Connect with industry recruiters to find internships and full-time positions that align with your career aspirations and broaden your options beyond campus.
+**2. Cover Letter Generation** – WolfJobs also offers automatic cover letter outlines based on your resume and job descriptions, helping you build personalized applications faster.
+**3. Percentage-Based Profile Matching** – With percentage-based skill and qualification matching, wolfJobs helps the recruiters to assess your compatibility with job requirements with ease.
+**4. Enhanced Security with Two-Factor Authentication** – Our new two-factor authentication feature adds an extra layer of protection, requiring identity verification through a unique code sent to your email.
+**5. Email Notifications for Job Postings** - Now, we offer real-time email updates about new job openings which keep you informed about the latest openings with minimal effort. 
 
 
 # Presentation Video
