@@ -14,6 +14,7 @@ type FormValuesQuestions = {
 };
 
 type FormValuesDetails = {
+  company_Name: string,
   role: string;
   jobtype: string;
   location: string;
@@ -36,9 +37,10 @@ const JobPreview = () => {
   const onSubmit = (e: any) => {
     e.preventDefault();
 
-    const url = `http://localhost:8000/api/v1/users/createjob`;
+    const url = http://localhost:8000/api/v1/users/createjob;
     const body = {
       id: userId,
+      company_Name: details.company_Name,
       name: details.role,
       type: details.jobtype,
       location: details.location,
@@ -103,6 +105,10 @@ const JobPreview = () => {
             </div>
             <div className="flex flex-row justify-between m-2">
               <div className="flex flex-col ">
+              <div>
+                  <span className="font-semibold text-lg">Company Name:</span>&nbsp;
+                  {details["company_Name"]}
+                </div>
                 <div>
                   <span className="font-semibold text-lg">Role:</span>&nbsp;
                   {details["role"]}
@@ -110,7 +116,7 @@ const JobPreview = () => {
                 <div>
                   <span className="font-semibold text-lg">Job Status:</span>
                   &nbsp;
-                  <span className={`capitalize ${"text-green-500"}`}>open</span>
+                  <span className={capitalize ${"text-green-500"}}>open</span>
                 </div>
                 <div>
                   <span className="font-semibold text-lg capitalize">
