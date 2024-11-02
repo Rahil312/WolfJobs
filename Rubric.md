@@ -15,11 +15,11 @@
 | Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing                           | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md|
 | Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.                                             | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md |
 | Use of version control tools                                                                                                                            |3 |https://github.com/Rahil312/WolfJobs/tree/New |
-| Test cases exist                                                                                                                                        |3 ||
-| Test cases are routinely executed                                                                                                                       |3||
+| Test cases exist                                                                                                                                        |3 |https://github.com/Rahil312/WolfJobs/tree/New/frontend/tests|
+| Test cases are routinely executed                                                                                                                       |3|https://github.com/Rahil312/WolfJobs/tree/New/frontend/tests|
 | Issues are discussed before they are closed                                                                                                             | ||
 | Chat channel: exists                                                                                                                                    |3 |https://docs.google.com/document/d/1T0sRlVpf6Hm4aRlrQ3YLZnENDQnRVq3nXWIgHrZJVlg/edit?usp=sharing|
-| Test cases: a large proportion of the issues related to handling failing cases.                                                                         |3 ||
+| Test cases: a large proportion of the issues related to handling failing cases.                                                                         |3 |https://github.com/Rahil312/WolfJobs/tree/New/frontend/tests|
 | Evidence that the whole team is using the same tools: everyone can get to all tools and files                                                           |3|https://github.com/Rahil312/WolfJobs/tree/New/.github/workflows|
 | Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)                               |3 |https://github.com/Rahil312/WolfJobs/tree/New/.github/workflows|
 | Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer) |3 |https://github.com/Rahil312/WolfJobs/tree/New|
