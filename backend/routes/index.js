@@ -11,6 +11,7 @@ router.get('/', homeController.home);
 router.use('/users',require('./users'));
 
 router.use('/api',require('./api'));
+router.use("/resume", require("./resume"));
 
 module.exports = router;
 
