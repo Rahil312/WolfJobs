@@ -119,9 +119,7 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
     <td align="center"><a href="https://github.com/shafa112"><img src="https://avatars.githubusercontent.com/shafa112" width="100px;" alt=""/><br /><b>Shafa Hassan</b></a><br /></td>
     <td align="center"><a href="https://github.com/Janhavi-23"><img src="https://avatars.githubusercontent.com/Janhavi-23" width="100px;" alt=""/><br /><b>Janhavi Pendse</b></a><br /></td>
     <td align="center"><a href="https://github.com/deepp2905"><img src="https://avatars.githubusercontent.com/deepp2905" width="100px;" alt=""/><br /><b>Deep Patel</b></a><br /></td>
-
-
-   
+  
   </tr>
 </table>
 
@@ -132,8 +130,18 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
     <td align="center"><a href="https://github.com/arul28"><img src="https://avatars.githubusercontent.com/arul28" width="100px;" alt=""/><br /><b>Arul Sharma</b></a><br /></td>
     <td align="center"><a href="https://github.com/Harris-A-Khan"><img src="https://avatars.githubusercontent.com/Harris-A-Khan" width="100px;" alt=""/><br /><b>Harris Khan </b></a><br /></td>
     <td align="center"><a href="https://github.com/Sarvesh-Somasundaram"><img src="https://avatars.githubusercontent.com/Sarvesh-Somasundaram" width="100px;" alt=""/><br /><b>Sarvesh Somasundaram</b></a><br /></td>
-
-
-   
+  
   </tr>
 </table>
+
+## Iteration 3:
+ <table>
+  <tr>
+    <td align="center"><a href="https://github.com/Rahil312"><img src="https://avatars.githubusercontent.com/u/76848658?v=4" width="100px;" alt=""/><br /><b>Rahil Shukla</b></a></td>
+    <td align="center"><a href="https://github.com/Karanpatel-1603"><img src="https://avatars.githubusercontent.com/u/179614593?v=4" width="100px;" alt=""/><br /><b>Karan Patel</b></a><br /></td>
+    <td align="center"><a href="https://github.com/RohanChampaneri11"><img src="https://avatars.githubusercontent.com/u/75676632?v=4" width="100px;" alt=""/><br /><b>Rohan Champaneri</b></a><br /></td>
+
+  </tr>
+</table>
+
+
