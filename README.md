@@ -6,7 +6,7 @@
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 [![Issues](https://img.shields.io/github/issues/deepr41/wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
 [![Issues Closed](https://img.shields.io/github/issues-closed/deepr41/wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
-[![Last Commit](https://img.shields.io/github/last-commit/Rahil312/WolfJobs/New)](https://github.com/Rahil312/WolfJobs/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/Rahil312/WolfJobs/New)](https://github.com/Rahil312/WolfJobs/commits/new)
 ![Lines of code](https://tokei.rs/b1/github/deepr41/wolfjobs)
 [![Repo-size](https://img.shields.io/github/repo-size/deepr41/Wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
 [![file_count](https://img.shields.io/github/directory-file-count/deepr41/Wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
