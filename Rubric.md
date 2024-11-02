@@ -31,7 +31,7 @@
 | The file CODE-OF-CONDUCT.md lists rules of behavior                                                                                                     | 3|https://github.com/Rahil312/WolfJobs/blob/New/CODE_OF_CONDUCT.md|
 | The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up                                | 3|https://github.com/Rahil312/WolfJobs/blob/New/CONTRIBUTING.md|
 | The file README.md contains all the following                                                                                                           | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md|
-| Video                                                                                                                                                   | ||
+| Video                                                                                                                                                   |3 |https://docs.google.com/document/u/0/d/1Z4RB1VA2fWZuyT5wxt3Ejzs6Jgrm6tp5zsJdoLO0uXQ/mobilebasic|
 | DOI badge: exists. To get a Digitial Object Indentifier, regiser the project at Zenodo. DOI badges                                                      | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md|
 | Badges showing your style checkers                                                                                                                      | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md|
 | Badges showing your code formatters                                                                                                                     | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md|
