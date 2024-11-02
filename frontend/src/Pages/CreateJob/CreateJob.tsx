@@ -14,6 +14,7 @@ import {
 import { useForm } from "react-hook-form";
 
 type FormValues = {
+  company_Name: string;
   role: string;
   jobtype: string;
   location: string;
@@ -28,6 +29,7 @@ const CreateJob = () => {
 
   const form = useForm<FormValues>({
     defaultValues: {
+      company_Name: "",
       role: "",
       jobtype: "",
       location: "",
@@ -43,6 +45,7 @@ const CreateJob = () => {
 
   const onSubmit = (data: FormValues) => {
     const body = {
+      company_Name: data.company_Name,
       role: data.role,
       jobtype: jobType,
       location: data.location,
@@ -94,6 +97,23 @@ const CreateJob = () => {
               className="m-4 mx-10"
             >
               <Stack spacing={2} width={600}>
+              <TextField
+                  label="Company Name"
+                  type="text"
+                  {...register("company_Name", {
+                    required: "company_Name is required",
+                  })}
+                  error={!!errors.role}
+                  helperText={errors.role?.message}
+                  sx={{
+                    "& label": { paddingLeft: (theme) => theme.spacing(1) },
+                    "& input": { paddingLeft: (theme) => theme.spacing(2.5) },
+                    "& fieldset": {
+                      paddingLeft: (theme) => theme.spacing(1.5),
+                      borderRadius: "10px",
+                    },
+                  }}
+                />
                 <TextField
                   label="Job Role"
                   type="text"
