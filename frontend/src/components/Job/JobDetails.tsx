@@ -137,6 +137,10 @@ const JobDetail = (props: any) => {
           </div>
           <div className="flex flex-row justify-between m-2">
             <div className="flex flex-col">
+            <div>
+                <span className="font-semibold text-lg">Company_Name:</span>&nbsp;
+                {jobData.company_Name}
+              </div>
               <div>
                 <span className="font-semibold text-lg">Role:</span>&nbsp;
                 {jobData.name}
