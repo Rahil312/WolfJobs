@@ -15,15 +15,15 @@
 | Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing                           | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md|
 | Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.                                             | 3|https://github.com/Rahil312/WolfJobs/blob/New/README.md |
 | Use of version control tools                                                                                                                            |3 |https://github.com/Rahil312/WolfJobs/tree/New |
-| Test cases exist                                                                                                                                        | ||
-| Test cases are routinely executed                                                                                                                       | ||
+| Test cases exist                                                                                                                                        |3 ||
+| Test cases are routinely executed                                                                                                                       |3||
 | Issues are discussed before they are closed                                                                                                             | ||
 | Chat channel: exists                                                                                                                                    |3 |https://docs.google.com/document/d/1T0sRlVpf6Hm4aRlrQ3YLZnENDQnRVq3nXWIgHrZJVlg/edit?usp=sharing|
-| Test cases: a large proportion of the issues related to handling failing cases.                                                                         | ||
-| Evidence that the whole team is using the same tools: everyone can get to all tools and files                                                           | ||
-| Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)                               | ||
-| Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer) | ||
-| Evidence that the members of the team are working across multiple places in the code base                                                               |  ||
+| Test cases: a large proportion of the issues related to handling failing cases.                                                                         |3 ||
+| Evidence that the whole team is using the same tools: everyone can get to all tools and files                                                           |3|https://github.com/Rahil312/WolfJobs/tree/New/.github/workflows|
+| Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)                               |3 |https://github.com/Rahil312/WolfJobs/tree/New/.github/workflows|
+| Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer) |3 |https://github.com/Rahil312/WolfJobs/tree/New|
+| Evidence that the members of the team are working across multiple places in the code base                                                               |3  |https://github.com/sanjitkverma/WolfJobs/compare/master...Rahil312:WolfJobs:New|
 | Short release cycles                                                                                                                                    | ||
 | The file .gitignore lists what files should not be saved to the repo                                                                                    | 3|https://github.com/Rahil312/WolfJobs/blob/New/.gitignore|
 | The file INSTALL.md lists how to install the code                                                                                                       | 3|https://github.com/Rahil312/WolfJobs/blob/New/INSTALL.md|
