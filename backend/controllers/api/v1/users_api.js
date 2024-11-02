@@ -1,10 +1,12 @@
+const mailSender = require('../../../utils/mailSender');
 const User = require("../../../models/user");
 const jwt = require("jsonwebtoken");
 const Food = require("../../../models/food");
 const History = require("../../../models/history");
 const Job = require("../../../models/job");
 const Application = require("../../../models/application");
-const AuthOtp = require("../../../models/authOtp");
+const OTP = require("../../../models/authOtp");
+const otpGenerator = require('otp-generator');
 
 const nodemailer = require("nodemailer");
 
@@ -14,25 +16,74 @@ module.exports.createSession = async function (req, res) {
   try {
     let user = await User.findOne({ email: req.body.email });
     res.set("Access-Control-Allow-Origin", "*");
-    if (!user || user.password != req.body.password) {
-      return res.json(422, {
+
+    // Check if user exists and compare hashed password
+    const isPasswordValid = user && req.body.password === user.password;
+
+    if (!user || !isPasswordValid) {
+      return res.status(422).json({
         message: "Invalid username or password",
       });
     }
-    res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
-      message: "Sign In Successful, here is your token, please keep it safe",
-      data: {
-        token: jwt.sign(user.toJSON(), "wolfjobs", { expiresIn: "100000" }),
-        user: user,
-      },
+
+    // Generate OTP
+    let otp = otpGenerator.generate(6, {
+      upperCaseAlphabets: false,
+      lowerCaseAlphabets: false,
+      specialChars: false,
+    });
+
+    let result = await OTP.findOne({ otp: otp });
+    while (result) {
+      otp = otpGenerator.generate(6, {
+        upperCaseAlphabets: false,
+      });
+      result = await OTP.findOne({ otp: otp });
+    }
+
+    const otpPayload = { email: req.body.email, otp };
+    await OTP.create(otpPayload);  // This will trigger the email sending
+
+    return res.status(200).json({
       success: true,
+      message: 'OTP sent successfully',
+      otp, // Remove this in production
     });
   } catch (err) {
-    console.log("*******", err);
-    return res.json(500, {
+    console.log("*", err);
+    return res.status(500).json({
       message: "Internal Server Error",
     });
+  }
+};
+
+module.exports.verifyOTP = async (req, res) => {
+  try {
+    const { email, otp } = req.body;
+    const response = await OTP.find({ email }).sort({ createdAt: -1 }).limit(1);
+
+    if (response.length === 0 || otp !== response[0].otp) {
+      return res.status(400).json({
+        success: false,
+        message: 'The OTP is not valid',
+      });
+    }
+
+    // OTP is valid, generate JWT token
+    const user = await User.findOne({ email });
+    const token = jwt.sign(user.toJSON(), "wolfjobs", { expiresIn: "100000" });
+
+    return res.status(200).json({
+      success: true,
+      message: 'OTP verified successfully',
+      data: {
+        token,
+        user,
+      },
+    });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ success: false, error: error.message });
   }
 };
 
@@ -63,7 +114,7 @@ module.exports.createHistory = async function (req, res) {
   }
 };
 
-module.exports.signUp = async function (req, res) {
+module.exports.signup = async function (req, res) {
   try {
     if (req.body.password != req.body.confirm_password) {
       return res.json(422, {
@@ -254,6 +305,7 @@ module.exports.createJob = async function (req, res) {
   check = req.body.skills;
   try {
     let job = await Job.create({
+      company_Name: req.body.company_Name,
       name: req.body.name,
       managerid: user._id,
       managerAffilication: user.affiliation,
@@ -268,6 +320,14 @@ module.exports.createJob = async function (req, res) {
       question4: req.body.question4,
     });
     res.set("Access-Control-Allow-Origin", "*");
+    let users = await User.find({});
+
+    // Send email to all users
+    const emailTitle = 'New Job Created';
+    const emailBody = <p>A new job has been created: <strong>${job.name}</strong></p>;
+    for (let user of users) {
+      await mailSender(user.email, emailTitle, emailBody);
+    }
     return res.json(200, {
       data: {
         job: job,
@@ -511,7 +571,7 @@ module.exports.generateOtp = async function (req, res) {
       from: '"Job Portal" <' + process.env.EMAIL + ">", // sender address
       to: email, // list of receivers
       subject: "OTP", // Subject line
-      html: `<p>Your OTP is ${otp}</p>`, // plain text body
+      html: <p>Your OTP is ${otp}</p>, // plain text body
     };
 
     await getTransport().sendMail(mailOptions);
@@ -532,6 +592,10 @@ module.exports.generateOtp = async function (req, res) {
 
 module.exports.verifyOtp = async function (req, res) {
   try {
+    const latestOtp = await AuthOtp.findOne({ email: req.body.email }) // or { userId: req.body.userId }
+      .sort({ createdAt: -1 }) // Sort by the creation date in descending order
+      .limit(1); // Limit to only one result
+
     const authOtp = await AuthOtp.findOne({
       userId: req.body.userId,
       otp: req.body.otp,
@@ -565,4 +629,39 @@ module.exports.verifyOtp = async function (req, res) {
   }
 };
 
-
+module.exports.sendOTP = async (req, res) => {
+  try {
+    const { email } = req.body;
+    // Check if user is already present
+    const checkUserPresent = await User.findOne({ email });
+    // If user found with provided email
+    if (checkUserPresent) {
+      return res.status(401).json({
+        success: false,
+        message: 'User is already registered',
+      });
+    }
+    let otp = otpGenerator.generate(6, {
+      upperCaseAlphabets: false,
+      lowerCaseAlphabets: false,
+      specialChars: false,
+    });
+    let result = await OTP.findOne({ otp: otp });
+    while (result) {
+      otp = otpGenerator.generate(6, {
+        upperCaseAlphabets: false,
+      });
+      result = await OTP.findOne({ otp: otp });
+    }
+    const otpPayload = { email, otp };
+    const otpBody = await OTP.create(otpPayload);
+    res.status(200).json({
+      success: true,
+      message: 'OTP sent successfully',
+      otp,
+    });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ success: false, error: error.message });
+  }
+};
