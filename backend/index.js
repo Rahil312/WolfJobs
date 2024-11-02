@@ -6,6 +6,8 @@ const port = 8000;
 
 const expressLayouts = require("express-ejs-layouts");
 
+require('dotenv').config();
+
 const db = require("./config/mongoose");
 
 //Used for session cookie
@@ -19,6 +21,8 @@ const passportLocal = require("./config/passport-local-strategy");
 const passportJWT = require("./config/passport-jwt-strategy");
 
 app.use(cors());
+
+app.use(express.json());
 
 app.use(express.urlencoded());
 
