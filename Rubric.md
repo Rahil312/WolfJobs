@@ -18,7 +18,7 @@
 | Test cases exist                                                                                                                                        | ||
 | Test cases are routinely executed                                                                                                                       | ||
 | Issues are discussed before they are closed                                                                                                             | ||
-| Chat channel: exists                                                                                                                                    | ||
+| Chat channel: exists                                                                                                                                    |3 |https://docs.google.com/document/d/1T0sRlVpf6Hm4aRlrQ3YLZnENDQnRVq3nXWIgHrZJVlg/edit?usp=sharing|
 | Test cases: a large proportion of the issues related to handling failing cases.                                                                         | ||
 | Evidence that the whole team is using the same tools: everyone can get to all tools and files                                                           | ||
 | Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)                               | ||
