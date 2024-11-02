@@ -114,23 +114,28 @@ const JobListTile = (props: any) => {
           <div className="w-4/6">
             <div className="flex items-center space-x-2">
               <div
-                className={`w-fit ${getAffiliationColour(
-                  affilation
-                )} rounded-2xl px-3 py-0`}
+                className={w-fit rounded-2xl px-3 py-0}
               >
                 <p className="inline text-xs" style={{ width: "fit-content" }}>
-                  {getAffiliationTag(affilation).toUpperCase()}
+                  {data.company_Name}
                 </p>
+                <p className="inline text-xs" style={{ width: "fit-content" }}>
+                  {getAffiliationTag(affilation).toUpperCase()}
+                </p> 
               </div>
               {userRole === "Applicant" && (
                 <div
-                  className={`ml-2 rounded-full px-3 py-0`}
+                  className={ml-2 rounded-full px-3 py-0}
                   style={getMatchStatus(data).style}
                 >
                   <p className="inline text-xs">{getMatchStatus(data).text}</p>
                 </div>
               )}
             </div>
+
+            {/* <p className="text-base">
+                <b>company_Name:</b> {data.company_Name}
+            </p> */}
             <div className="h-1"></div>
 
             <div className="pl-2">
