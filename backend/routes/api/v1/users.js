@@ -6,10 +6,13 @@ const usersApi = require("../../../controllers/api/v1/users_api");
 
 const bodyParser = require("body-parser");
 
+const resume_controller = require("../../../controllers/resume_controller")
+
 const jsonParser = bodyParser.json();
 
 router.post("/create-session", usersApi.createSession);
-router.post("/signup", usersApi.signUp);
+router.post("/signup", usersApi.signup);
+router.post("/verify-otp", usersApi.verifyOTP);
 router.post("/edit", jsonParser, usersApi.editProfile);
 router.get("/getprofile/:id", usersApi.getProfile);
 router.get("/search/:name", usersApi.searchUser);
@@ -26,6 +29,11 @@ router.post("/verifyOTP", usersApi.verifyOtp);
 router.post("/rejectapplication", usersApi.rejectApplication);
 router.post("/closejob", jsonParser, usersApi.closeJob);
 router.post("/createapplication", jsonParser, usersApi.createApplication);
+router.post('/parseResume', resume_controller.parseResume);
+router.post('/uploadResume', resume_controller.uploadResume);
+router.get('/resume/:id', resume_controller.getResume);
+router.get('/ping', resume_controller.ping);
+
 
 
 module.exports = router;
